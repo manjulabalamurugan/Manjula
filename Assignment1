@@ -1,7 +1,5 @@
 package week2.day1;
 
-package week2.day1;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -9,76 +7,108 @@ import org.openqa.selenium.support.ui.Select;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class HomeAssignment1 {
-	public static void main(String[] args) {
+public class Assignment1 {
+	
+		public static void main(String[] args) {
+
+	
+		//setup chromedriver using webdriver manager software
 		WebDriverManager.chromedriver().setup();
-		ChromeDriver driver = new ChromeDriver();
+	
+	//launch chrome browser(classname->chromedriver)
+		ChromeDriver driver=new ChromeDriver();
+	
+	//load the URL->get (method)
 		driver.get("http://leaftaps.com/opentaps");
+	
+	//you cannot resue already opened browser for the next run or the test
+	
+	//Maximize chrome browser
 		driver.manage().window().maximize();
+		
 		driver.findElement(By.id("username")).sendKeys("DemoSalesManager");
 		driver.findElement(By.id("password")).sendKeys("crmsfa");
 		driver.findElement(By.className("decorativeSubmit")).click();
 		String title = driver.getTitle();
 		System.out.println(title);
 		driver.findElement(By.linkText("CRM/SFA")).click();
-		driver.findElement(By.linkText("Accounts")).click();
+		//driver.get("http://leaftaps.com/crmsfa/control/main?externalLoginKey=EL483246454846");
 		driver.findElement(By.linkText("Create Account")).click();
-		driver.findElement(By.id("accountName")).sendKeys("Anju");
+		driver.findElement(By.id("accountName")).sendKeys("ManjuQ1");
 		driver.findElement(By.name("parentPartyId")).sendKeys("democlass1");
-		driver.findElement(By.id("groupNameLocal")).sendKeys("liya");
-		driver.findElement(By.id("officeSiteName")).sendKeys("Testleaf");
-		driver.findElement(By.id("annualRevenue")).sendKeys("5");
-		WebElement ele = driver.findElement(By.id("currencyUomId"));
-		Select dd = new Select(ele);
-				dd.selectByVisibleText("AOK - Angolan Kwanza");
-				WebElement ele1 = driver.findElement(By.name("industryEnumId"));
-				Select dd1 = new Select(ele1);
-				dd1.selectByValue("IND_SOFTWARE");
-				driver.findElement(By.id("numberEmployees")).sendKeys("5235425");
-		 WebElement ele11 = driver.findElement(By.name("ownershipEnumId"));
-		 Select dd11 = new Select(ele11);
-		 dd11.selectByVisibleText("Partnership");
-		 driver.findElement(By.id("sicCode")).sendKeys("abc");
-		 driver.findElement(By.id("tickerSymbol")).sendKeys("yes");
-			WebElement ele12 = driver.findElement(By.name("dataSourceId"));
-			Select dd2 = new Select(ele12);
-			dd2.selectByValue("LEAD_COLDCALL");
+		driver.findElement(By.id("groupNameLocal")).sendKeys("ManjuS4");
+		driver.findElement(By.id("officeSiteName")).sendKeys("access");
+		driver.findElement(By.id("annualRevenue")).sendKeys("1000");
+		driver.findElement(By.id("numberEmployees")).sendKeys("45");
+		driver.findElement(By.id("tickerSymbol")).sendKeys("15");
+		driver.findElement(By.name("description")).sendKeys("filling it for testing");
+		driver.findElement(By.name("importantNote")).sendKeys("Selenium");
+		driver.findElement(By.name("sicCode")).sendKeys("11");
+		driver.findElement(By.name("primaryPhoneCountryCode")).sendKeys("1");
+		driver.findElement(By.id("primaryPhoneAreaCode")).sendKeys("600019");
+		driver.findElement(By.name("primaryPhoneExtension")).sendKeys("12");
+		driver.findElement(By.name("primaryEmail")).sendKeys("mans@gmail.com");
+		driver.findElement(By.id("primaryPhoneNumber")).sendKeys("1234567890");
+		driver.findElement(By.name("primaryPhoneAskForName")).sendKeys("sasikala");
+		driver.findElement(By.name("primaryWebUrl")).sendKeys("http://chrome.com");
+		
+		driver.findElement(By.name("generalToName")).sendKeys("balu");
+		driver.findElement(By.name("generalAddress1")).sendKeys("87/A");
+		driver.findElement(By.name("generalCity")).sendKeys("Chennai");
+		driver.findElement(By.id("generalPostalCode")).sendKeys("600019");
+		driver.findElement(By.id("generalPostalCodeExt")).sendKeys("01");
+		driver.findElement(By.id("generalAttnName")).sendKeys("Sassy");
+		driver.findElement(By.id("generalAddress2")).sendKeys("thiruvottiyur");
+		
 
-			WebElement ele13 = driver.findElement(By.name("marketingCampaignId"));
-			Select dd3 = new Select(ele13);
-			dd3.selectByValue("9002");
-			WebElement ele14 = driver.findElement(By.name("initialTeamPartyId"));
-			Select dd4 = new Select(ele14);
-			dd4.selectByValue("DemoSalesTeam1");
-			driver.findElement(By.name("description")).sendKeys("Hi testleaf");
-			 driver.findElement(By.name("importantNote")).sendKeys("useful fro career");
-			 System.out.println("Contact Information");
-			 driver.findElement(By.id("primaryPhoneCountryCode")).sendKeys("91");
-			 driver.findElement(By.id("primaryPhoneAreaCode")).sendKeys("910");
-			 driver.findElement(By.id("primaryPhoneNumber")).sendKeys("1234567890");
-			 driver.findElement(By.id("primaryPhoneExtension")).sendKeys("044");
-			 driver.findElement(By.name("primaryPhoneAskForName")).sendKeys("saran");
-			 driver.findElement(By.id("primaryEmail")).sendKeys("ann@gmail.com");
-			 driver.findElement(By.name("primaryWebUrl")).sendKeys("http://chrome.com");
-			 driver.findElement(By.name("generalToName")).sendKeys("anjuk");
-			 driver.findElement(By.name("generalAttnName")).sendKeys("liyana");
-			 driver.findElement(By.name("generalAddress1")).sendKeys("roya");
-			 driver.findElement(By.name("generalAddress2")).sendKeys("guindy");
-			 driver.findElement(By.name("generalCity")).sendKeys("chennai");
-			 WebElement ele15 = driver.findElement(By.name("generalCountryGeoId"));
-				Select dd5 = new Select(ele15);
-				dd5.selectByValue("ALB");
-				 driver.findElement(By.id("generalPostalCode")).sendKeys("600017");
-				// WebElement ele16 = driver.findElement(By.id("generalStateProvinceGeoId"));
-					////Select dd6 = new Select(ele16);
-				//	dd6.selectByVisibleText("Tennessee");
-					// driver.findElement(By.id("generalPostalCodeExt")).sendKeys("def");
-					 
+		
+		
+		
+		//select prefferedCurrency dropdown with one of the value
+				WebElement prefferedCurrency=driver.findElement(By.id("currencyUomId"));
+				Select dd1=new Select(prefferedCurrency);
+				dd1.selectByValue("ALL");
+		
+		//select industry with visible text
+				WebElement industryType=driver.findElement(By.name("industryEnumId"));
+				Select dd2=new Select(industryType);
+				dd2.selectByVisibleText("Finance");
+		
+		//select ownership with index
+				WebElement ownership=driver.findElement(By.name("ownershipEnumId"));
+				Select dd3=new Select(ownership);
+				dd3.selectByIndex(5);
+			
+		
+		//select source with visible text
+				WebElement sourceD=driver.findElement(By.id("dataSourceId"));
+				Select dd5=new Select(sourceD);
+				dd5.selectByVisibleText("Partner");
+				
+		//select InitialTeam dropdown with one of the value
+				WebElement InitialTeam=driver.findElement(By.name("initialTeamPartyId"));
+				Select dd6=new Select(InitialTeam);
+				dd6.selectByValue("DemoSalesTeam1");		
+		
+		//select Marketing Campaign with index
+				WebElement marketing=driver.findElement(By.id("marketingCampaignId"));
+				Select dd7=new Select(marketing);
+				dd7.selectByIndex(2);
+				
+		//select COUNTRY with value
+				WebElement country=driver.findElement(By.name("generalCountryGeoId"));
+				Select dd8=new Select(country);
+				dd8.selectByValue("IND");
+				
+		//select State/Province with value ( Not Working )
+				//WebElement state1=driver.findElement(By.name("generalStateProvinceGeoId"));
+				//Select dd9=new Select(state1);
+				//dd9.selectByValue("IN-TN");
+				
 		driver.findElement(By.className("smallSubmit")).click();
 		String title1 = driver.getTitle();
 		System.out.println(title1);
-		//title = driver.getTitle();
-		//sSystem.out.println(title);	*/
 	}
 
 }
+
