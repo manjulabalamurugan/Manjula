@@ -80,9 +80,10 @@ public class Amazon  {
 		
 		
 //Confirm the title is "Amazon Sign In"		
-		 //title[contains(text(),'Amazon Sign In')]
-		String title = driver.findElementByXPath("/html/head/title").getText();
-		System.out.println("Is Title of the page Null ?  " + title.isEmpty());
+		 if(driver.getTitle().contains("Amazon Sign In"))
+		{
+			System.out.println("The Title is successfully verified");
+		}
 		Thread.sleep(2000);
 // Click Continue (without entering mobile number/email)
 		
