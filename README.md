@@ -1,2 +1,0 @@
-# Manjula
-CODE
